@@ -1,4 +1,5 @@
-﻿using SFML.Graphics;
+﻿using System.Diagnostics;
+using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
 using static SFML.Window.Keyboard.Key;
@@ -8,18 +9,20 @@ namespace Chip8Emulator;
 class Program
 {
     static RenderWindow window;
+    
     public static bool[] keysPressed = new bool[16];
     public static bool[] previousCycleKeyPressed = new bool[16];
-    public static bool[] hasReleased = new bool[16];
+    
     
     static void Main(string[] args)
     {
-        CPU cpu = new CPU(File.ReadAllBytes("/Users/uravtanna/Coding/CSharp/Chip8Emulator/Chip8Emulator/TestRoms/6-keypad.ch8"));
-        window = new RenderWindow(new VideoMode(1200, 600), "Hello World!");
+        window = new RenderWindow(new VideoMode(1200, 600), "Chip 8 Emulator");
         window.SetVisible(true);
         window.Closed += OnClosed;
-        // window.KeyReleased += OnReleased;
         window.KeyPressed += OnPressed;
+        
+        CPU cpu = new CPU(File.ReadAllBytes("/Users/uravtanna/Coding/CSharp/Chip8Emulator/Chip8Emulator/TestRoms/Pong (1 player).ch8"));
+        
         while (window.IsOpen)
         {
             cpu.ExecuteCycle();

@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using SFML.Graphics;
 using SFML.Window;
 using static Chip8Emulator.Program;
@@ -19,6 +20,11 @@ public class CPU
     private byte sound_timer;
     private long last_sound_decremented;
     private readonly long rate = 17; // decrement when difference is 17 ms
+
+    private Stopwatch clock;
+    private long elapsedTime;
+    private long tickThreshold;
+    private static long clockSpeed = 10; //in hz
     
     public Image screen;
     
@@ -38,11 +44,18 @@ public class CPU
         sound_timer = 0;
         last_sound_decremented = DateTimeOffset.Now.ToUnixTimeMilliseconds();
         
+        clock = Stopwatch.StartNew();
+        tickThreshold = GetTickThresholdFromHZ(clockSpeed);
+        
         InitializeFont();
     }
 
     public void ExecuteCycle()
     {
+        elapsedTime = clock.ElapsedTicks;
+        while (clock.ElapsedTicks - elapsedTime < tickThreshold) { }
+        Console.WriteLine(clock.ElapsedTicks - elapsedTime);
+        
         long now = DateTimeOffset.Now.ToUnixTimeMilliseconds();
         if (now - last_delay_decremented >= rate)
         {
@@ -324,6 +337,12 @@ public class CPU
                 break;
         }
     }
+    
+    private static long GetTickThresholdFromHZ(long clockSpeed)
+    {
+        return (long) (10000000.0 / clockSpeed);
+    }
+
     
     public static void UpdateInput()
     {

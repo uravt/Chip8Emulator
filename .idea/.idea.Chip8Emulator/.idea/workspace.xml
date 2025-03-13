@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3545664c-a4a4-44f2-8206-4dd88ce9f175" name="Changes" comment="">
+    <list default="true" id="3545664c-a4a4-44f2-8206-4dd88ce9f175" name="Changes" comment="keypad tests now pass">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Chip8Emulator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Chip8Emulator/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chip8Emulator/CPU.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/CPU.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chip8Emulator/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/Program.cs" afterDir="false" />
@@ -19,7 +19,6 @@
       <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/ref/Chip8Emulator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/ref/Chip8Emulator.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/refint/Chip8Emulator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/refint/Chip8Emulator.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/rider.project.model.nuget.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +93,7 @@
       <option name="presentableId" value="Default" />
       <updated>1741648886257</updated>
       <workItem from="1741648887309" duration="22375000" />
-      <workItem from="1741831761773" duration="3687000" />
+      <workItem from="1741831761773" duration="6480000" />
     </task>
     <task id="LOCAL-00001" summary="added basic instructions, ibm logo now works">
       <option name="closed" value="true" />
@@ -112,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741831480660</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="keypad tests now pass">
+      <option name="closed" value="true" />
+      <created>1741836490101</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1741836490101</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,6 +130,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="added basic instructions, ibm logo now works" />
     <MESSAGE value="added test roms, now passes all flag tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="added test roms, now passes all flag tests" />
+    <MESSAGE value="keypad tests now pass" />
+    <option name="LAST_COMMIT_MESSAGE" value="keypad tests now pass" />
   </component>
 </project>
