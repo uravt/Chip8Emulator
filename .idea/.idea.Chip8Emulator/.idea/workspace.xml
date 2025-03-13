@@ -7,20 +7,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3545664c-a4a4-44f2-8206-4dd88ce9f175" name="Changes" comment="added basic instructions, ibm logo now works">
+    <list default="true" id="3545664c-a4a4-44f2-8206-4dd88ce9f175" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Chip8Emulator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Chip8Emulator/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chip8Emulator/CPU.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/CPU.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chip8Emulator/Chip8Emulator.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/Chip8Emulator.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chip8Emulator/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chip8Emulator/bin/Debug/net9.0/Chip8Emulator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/bin/Debug/net9.0/Chip8Emulator.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chip8Emulator/bin/Debug/net9.0/Chip8Emulator.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/bin/Debug/net9.0/Chip8Emulator.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/ref/Chip8Emulator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/ref/Chip8Emulator.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/refint/Chip8Emulator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/refint/Chip8Emulator.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/rider.project.model.nuget.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,38 +32,39 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Chip8Emulator/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/uravtanna/Coding/CSharp/Chip8Emulator/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2u97MFHg2kVePcBqaZ1zT4wDTU0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/uravtanna/Library/Application Support/JetBrains/Rider2023.2/resharper-host/DecompilerCache",
-      "/Users/uravtanna/Library/Application Support/JetBrains/Rider2023.2/resharper-host/SourcesCache",
-      "/Users/uravtanna/.local/share/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/uravtanna/Library/Application Support/JetBrains/Rider2023.2/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/uravtanna/Library/Application Support/JetBrains/Rider2023.2/resharper-host/SourcesCache&quot;,
+      &quot;/Users/uravtanna/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Chip8Emulator" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -93,7 +93,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1741648886257</updated>
-      <workItem from="1741648887309" duration="22027000" />
+      <workItem from="1741648887309" duration="22375000" />
+      <workItem from="1741831761773" duration="3687000" />
     </task>
     <task id="LOCAL-00001" summary="added basic instructions, ibm logo now works">
       <option name="closed" value="true" />
@@ -103,7 +104,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741654437423</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added test roms, now passes all flag tests">
+      <option name="closed" value="true" />
+      <created>1741831480660</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1741831480660</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,6 +122,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="added basic instructions, ibm logo now works" />
-    <option name="LAST_COMMIT_MESSAGE" value="added basic instructions, ibm logo now works" />
+    <MESSAGE value="added test roms, now passes all flag tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="added test roms, now passes all flag tests" />
   </component>
 </project>

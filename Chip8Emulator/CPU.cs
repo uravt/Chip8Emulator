@@ -12,9 +12,13 @@ public class CPU
     public ushort pc;
     public ushort index_register;
     public Stack<ushort> stk;
-    private byte delay_timer;
-    private byte sound_timer;
     public byte[] registers;
+    
+    private byte delay_timer;
+    private long last_delay_decremented;
+    private byte sound_timer;
+    private long last_sound_decremented;
+    private readonly long rate = 17; // decrement when difference is 17 ms
     
     public Image screen;
     
@@ -25,23 +29,40 @@ public class CPU
         pc = 0x200;
         index_register = 0;
         stk = new Stack<ushort>();
-        delay_timer = 0;
-        sound_timer = 0;
         registers = new byte[16];
         
         screen = new Image(WIDTH, HEIGHT);
+        
+        delay_timer = 0;
+        last_delay_decremented = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+        sound_timer = 0;
+        last_sound_decremented = DateTimeOffset.Now.ToUnixTimeMilliseconds();
         
         InitializeFont();
     }
 
     public void ExecuteCycle()
     {
+        long now = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+        if (now - last_delay_decremented >= rate)
+        {
+            delay_timer = (byte) Math.Max(delay_timer - 1, 0);
+            last_delay_decremented = now;
+        }
+        if (now - last_sound_decremented >= rate)
+        {
+            sound_timer = (byte) Math.Max(sound_timer - 1, 0);
+            last_sound_decremented = now;
+        }
+        
+        UpdateInput();
         byte[] currentInstruction = {memory[pc], memory[pc + 1]};
         byte nibble1 = (byte) (currentInstruction[0] >> 4);
         byte nibble2 = (byte) (currentInstruction[0] & 0x0F);
         byte nibble3 = (byte) (currentInstruction[1] >> 4);
         byte nibble4 = (byte) (currentInstruction[1] & 0x0F);
         ushort instruction = BitConverter.ToUInt16(new [] {currentInstruction[1], currentInstruction[0]}, 0);
+        // Console.WriteLine(instruction.ToString("X"));
         
         switch (nibble1)
         {
@@ -216,7 +237,7 @@ public class CPU
                 switch (currentInstruction[1])
                 {
                     case 0x9E:
-                        if (keysPressed[nibble2])
+                        if (keysPressed[registers[nibble2]])
                         {
                             pc += 4;
                         }
@@ -224,10 +245,9 @@ public class CPU
                         {
                             pc += 2;
                         }
-
                         break;
                     case 0xA1: 
-                        if (!keysPressed[nibble2])
+                        if (!keysPressed[registers[nibble2]])
                         {
                             pc += 4;
                         }
@@ -265,7 +285,7 @@ public class CPU
                     case 0x0A:
                         for(byte i = 0; i < keysPressed.Length; i++)  // loop through and check for any key presses
                         {
-                            if (keysPressed[i])  // if we found one we can continue to the next instruction
+                            if (!keysPressed[i] && previousCycleKeyPressed[i])  // if we found one we can continue to the next instruction
                             {
                                 registers[nibble2] = i;
                                 pc += 2;
@@ -307,6 +327,8 @@ public class CPU
     
     public static void UpdateInput()
     {
+        previousCycleKeyPressed = (bool[]) keysPressed.Clone();
+        
         keysPressed[0] = Keyboard.IsKeyPressed(Keyboard.Key.X);
         keysPressed[1] = Keyboard.IsKeyPressed(Keyboard.Key.Num1);
         keysPressed[2] = Keyboard.IsKeyPressed(Keyboard.Key.Num2);
