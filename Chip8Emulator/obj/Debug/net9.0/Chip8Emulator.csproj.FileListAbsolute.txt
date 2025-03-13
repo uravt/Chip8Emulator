@@ -196,3 +196,4 @@
 /Users/uravtanna/Coding/CSharp/Chip8Emulator/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.pdb
 /Users/uravtanna/Coding/CSharp/Chip8Emulator/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.genruntimeconfig.cache
 /Users/uravtanna/Coding/CSharp/Chip8Emulator/Chip8Emulator/obj/Debug/net9.0/ref/Chip8Emulator.dll
+/Users/uravtanna/Coding/CSharp/Chip8Emulator/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.sourcelink.json

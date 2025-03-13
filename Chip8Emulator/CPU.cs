@@ -1,4 +1,8 @@
 using SFML.Graphics;
+using SFML.Window;
+using static Chip8Emulator.Program;
+
+namespace Chip8Emulator;
 
 public class CPU
 {
@@ -48,21 +52,127 @@ public class CPU
                         screen = new Image(WIDTH, HEIGHT);
                         pc += 2;
                         break;
+                    case 0x00EE:
+                        pc = stk.Pop();
+                        break;
                 }
                 break;
             case 0x1:
+                pc = GetValueFromNNN(nibble2, nibble3, nibble4);
+                break;
+            case 0x2:
+                stk.Push( (ushort) (pc + 2));
                 pc = GetValueFromNNN(nibble2, nibble3, nibble4);
                 break;
             case 0x6:
                 registers[nibble2] = currentInstruction[1];
                 pc += 2;
                 break;
+            case 0x3:
+                if (registers[nibble2] == currentInstruction[1])
+                    pc += 4;
+                else
+                    pc += 2;
+                break;
+            case 0x4:
+                if (registers[nibble2] != currentInstruction[1])
+                    pc += 4;
+                else
+                    pc += 2;
+                break;
+            case 0x5:
+                if (registers[nibble2] == registers[nibble3])
+                    pc += 4;
+                else
+                    pc += 2;
+                break;
             case 0x7:
                 registers[nibble2] += currentInstruction[1];
                 pc += 2;
                 break;
+            case 0x8:
+                switch (nibble4)
+                {
+                    case 0x0:
+                        registers[nibble2] = registers[nibble3];
+                        break;
+                    case 0x1:
+                        registers[nibble2] |= registers[nibble3];
+                        break;
+                    case 0x2:
+                        registers[nibble2] &= registers[nibble3];
+                        break;
+                    case 0x3:
+                        registers[nibble2] ^= registers[nibble3];
+                        break;
+                    case 0x4:
+                        try  //this goofy code block does overflow checking
+                        {
+                            checked
+                            {
+                                registers[nibble2] += registers[nibble3];
+                                registers[0xF] = 0;
+                            }
+                        }
+                        catch
+                        {
+                            registers[nibble2] += registers[nibble3];
+                            registers[0xF] = 1;
+                        }
+                        break;
+                    case 0x5:
+                        byte register0xF = 0;
+                        if (registers[nibble2] >= registers[nibble3])
+                        {
+                            register0xF = 1;
+                        }
+                        
+                        registers[nibble2] -= registers[nibble3];
+                        registers[0xF] = register0xF;
+                        break;
+                    case 0x6:
+                        
+                        register0xF = (byte) (registers[nibble3] & 1);
+                        registers[nibble2] = registers[nibble3];
+                        registers[nibble2] >>= 1;
+                        registers[0xF] = register0xF;
+                        break;
+                    case 0x7:
+                        register0xF = 0;
+                        if (registers[nibble3] >= registers[nibble2])
+                        {
+                            register0xF = 1;
+                        }
+  
+                        registers[nibble2] = (byte) (registers[nibble3] - registers[nibble2]);
+                        registers[0xF] = register0xF;
+                        break;
+                    case 0xE:
+                        register0xF = (byte)((registers[nibble3] & 0x80) >> 7);
+                        registers[nibble2] = registers[nibble3];
+                        registers[nibble2] <<= 1;
+                        registers[0xF] = register0xF;
+                        break;
+                }
+
+                pc += 2;
+                break;
+            case 0x9:
+                if (registers[nibble2] != registers[nibble3])
+                    pc += 4;
+                else
+                    pc += 2;
+                break;
             case 0xA:
                 index_register = GetValueFromNNN(nibble2, nibble3, nibble4);
+                pc += 2;
+                break;
+            case 0xB:
+                pc = (ushort) (registers[0x0] +  GetValueFromNNN(nibble2, nibble3, nibble4));
+                break;
+            case 0xC:
+                Random rnd = new Random();
+                registers[nibble2] &= (byte) rnd.Next(0, 256);
                 pc += 2;
                 break;
             case 0xD:
@@ -102,7 +212,117 @@ public class CPU
                 }
                 pc += 2;
                 break;
+            case 0xE:
+                switch (currentInstruction[1])
+                {
+                    case 0x9E:
+                        if (keysPressed[nibble2])
+                        {
+                            pc += 4;
+                        }
+                        else
+                        {
+                            pc += 2;
+                        }
+
+                        break;
+                    case 0xA1: 
+                        if (!keysPressed[nibble2])
+                        {
+                            pc += 4;
+                        }
+                        else
+                        {
+                            pc += 2;
+                        }
+                        break;
+                }
+                break;
+            case 0xF:
+                switch (currentInstruction[1])
+                {
+                    case 0x07:
+                        registers[nibble2] = delay_timer;
+                        pc += 2;
+                        break;
+                    case 0x15:
+                        delay_timer = registers[nibble2];
+                        pc += 2;
+                        break;
+                    case 0x18:
+                        sound_timer = registers[nibble2];
+                        pc += 2;
+                        break;
+                    case 0x1E:
+                        byte register0xF = registers[0xF];
+;                        if (registers[nibble2] + index_register > 0xFFF)
+                            register0xF = 1;
+                        
+                        index_register += registers[nibble2];
+                        registers[0xF] = register0xF;
+                        pc += 2;
+                        break;
+                    case 0x0A:
+                        for(byte i = 0; i < keysPressed.Length; i++)  // loop through and check for any key presses
+                        {
+                            if (keysPressed[i])  // if we found one we can continue to the next instruction
+                            {
+                                registers[nibble2] = i;
+                                pc += 2;
+                                return;
+                            }
+                        }  // otherwise do not increment pc and check for input again
+
+                        break;
+                    case 0x29:
+                        index_register = (byte) (registers[nibble2] + 0x50);
+                        pc += 2;
+                        break;
+                    case 0x33:
+                        int value = registers[nibble2];
+                        memory[index_register] = (byte) (value / 100);
+                        memory[index_register + 1] = (byte) (value % 100 / 10);
+                        memory[index_register + 2] = (byte) (value % 10);
+                        pc += 2;
+                        break;
+                    case 0x55:
+                        // this instruction currently uses the modern implementation
+                        for (int i = 0; i <= nibble2; i++)
+                        {
+                            memory[index_register + i] = registers[i];
+                        }
+                        pc += 2;
+                        break;
+                    case 0x65:
+                        for (int i = 0; i <= nibble2; i++)
+                        {
+                            registers[i] = memory[index_register + i];
+                        }
+                        pc += 2;
+                        break;
+                }
+                break;
         }
+    }
+    
+    public static void UpdateInput()
+    {
+        keysPressed[0] = Keyboard.IsKeyPressed(Keyboard.Key.X);
+        keysPressed[1] = Keyboard.IsKeyPressed(Keyboard.Key.Num1);
+        keysPressed[2] = Keyboard.IsKeyPressed(Keyboard.Key.Num2);
+        keysPressed[3] = Keyboard.IsKeyPressed(Keyboard.Key.Num3);
+        keysPressed[4] = Keyboard.IsKeyPressed(Keyboard.Key.Q);
+        keysPressed[5] = Keyboard.IsKeyPressed(Keyboard.Key.W);
+        keysPressed[6] = Keyboard.IsKeyPressed(Keyboard.Key.E);
+        keysPressed[7] = Keyboard.IsKeyPressed(Keyboard.Key.A);
+        keysPressed[8] = Keyboard.IsKeyPressed(Keyboard.Key.S);
+        keysPressed[9] = Keyboard.IsKeyPressed(Keyboard.Key.D);
+        keysPressed[0xA] = Keyboard.IsKeyPressed(Keyboard.Key.Z);
+        keysPressed[0xB] = Keyboard.IsKeyPressed(Keyboard.Key.C);
+        keysPressed[0xC] = Keyboard.IsKeyPressed(Keyboard.Key.Num4);
+        keysPressed[0xD] = Keyboard.IsKeyPressed(Keyboard.Key.R);
+        keysPressed[0xE] = Keyboard.IsKeyPressed(Keyboard.Key.F);
+        keysPressed[0xF] = Keyboard.IsKeyPressed(Keyboard.Key.V);
     }
 
     private ushort GetValueFromNNN(byte nibble2, byte nibble3, byte nibble4)

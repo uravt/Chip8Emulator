@@ -7,19 +7,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3545664c-a4a4-44f2-8206-4dd88ce9f175" name="Changes" comment="" />
+    <list default="true" id="3545664c-a4a4-44f2-8206-4dd88ce9f175" name="Changes" comment="added basic instructions, ibm logo now works">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Chip8Emulator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Chip8Emulator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chip8Emulator/CPU.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/CPU.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chip8Emulator/Chip8Emulator.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/Chip8Emulator.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chip8Emulator/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chip8Emulator/bin/Debug/net9.0/Chip8Emulator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/bin/Debug/net9.0/Chip8Emulator.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chip8Emulator/bin/Debug/net9.0/Chip8Emulator.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/bin/Debug/net9.0/Chip8Emulator.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/ref/Chip8Emulator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/ref/Chip8Emulator.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/refint/Chip8Emulator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/refint/Chip8Emulator.dll" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Chip8Emulator/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 1
 }]]></component>
   <component name="ProjectId" id="2u97MFHg2kVePcBqaZ1zT4wDTU0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -29,6 +49,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -72,14 +93,26 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1741648886257</updated>
-      <workItem from="1741648887309" duration="4687000" />
+      <workItem from="1741648887309" duration="22027000" />
     </task>
+    <task id="LOCAL-00001" summary="added basic instructions, ibm logo now works">
+      <option name="closed" value="true" />
+      <created>1741654437423</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1741654437423</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="added basic instructions, ibm logo now works" />
+    <option name="LAST_COMMIT_MESSAGE" value="added basic instructions, ibm logo now works" />
   </component>
 </project>
