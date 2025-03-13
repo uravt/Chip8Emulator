@@ -10,10 +10,6 @@ class Program
 {
     static RenderWindow window;
     
-    public static bool[] keysPressed = new bool[16];
-    public static bool[] previousCycleKeyPressed = new bool[16];
-    
-    
     static void Main(string[] args)
     {
         window = new RenderWindow(new VideoMode(1200, 600), "Chip 8 Emulator");
@@ -21,7 +17,7 @@ class Program
         window.Closed += OnClosed;
         window.KeyPressed += OnPressed;
         
-        CPU cpu = new CPU(File.ReadAllBytes("/Users/uravtanna/Coding/CSharp/Chip8Emulator/Chip8Emulator/TestRoms/Pong (1 player).ch8"));
+        CPU cpu = new CPU(File.ReadAllBytes("TestRoms/Pong (1 player).ch8"));
         
         while (window.IsOpen)
         {

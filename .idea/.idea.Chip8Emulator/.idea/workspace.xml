@@ -7,18 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3545664c-a4a4-44f2-8206-4dd88ce9f175" name="Changes" comment="keypad tests now pass">
+    <list default="true" id="3545664c-a4a4-44f2-8206-4dd88ce9f175" name="Changes" comment="added method to manually change clock cycles">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Chip8Emulator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Chip8Emulator/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chip8Emulator/CPU.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/CPU.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chip8Emulator/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chip8Emulator/bin/Debug/net9.0/Chip8Emulator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/bin/Debug/net9.0/Chip8Emulator.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chip8Emulator/bin/Debug/net9.0/Chip8Emulator.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/bin/Debug/net9.0/Chip8Emulator.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/ref/Chip8Emulator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/ref/Chip8Emulator.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/refint/Chip8Emulator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/refint/Chip8Emulator.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +22,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Chip8Emulator/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chip8Emulator/obj/Debug/net9.0/.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/uravtanna/Coding/CSharp/Chip8Emulator/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/uravtanna/Coding/CSharp/Chip8Emulator/Chip8Emulator/obj/Debug/net9.0/Chip8Emulator.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -93,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1741648886257</updated>
       <workItem from="1741648887309" duration="22375000" />
-      <workItem from="1741831761773" duration="6480000" />
+      <workItem from="1741831761773" duration="7055000" />
     </task>
     <task id="LOCAL-00001" summary="added basic instructions, ibm logo now works">
       <option name="closed" value="true" />
@@ -119,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741836490101</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added method to manually change clock cycles">
+      <option name="closed" value="true" />
+      <created>1741839436292</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1741839436292</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +131,7 @@
     <MESSAGE value="added basic instructions, ibm logo now works" />
     <MESSAGE value="added test roms, now passes all flag tests" />
     <MESSAGE value="keypad tests now pass" />
-    <option name="LAST_COMMIT_MESSAGE" value="keypad tests now pass" />
+    <MESSAGE value="added method to manually change clock cycles" />
+    <option name="LAST_COMMIT_MESSAGE" value="added method to manually change clock cycles" />
   </component>
 </project>

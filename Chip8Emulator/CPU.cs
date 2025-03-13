@@ -26,6 +26,9 @@ public class CPU
     private long tickThreshold;
     private static long clockSpeed = 10; //in hz
     
+    public static bool[] keysPressed = new bool[16];
+    public static bool[] previousCycleKeyPressed = new bool[16];
+    
     public Image screen;
     
     public CPU(byte[] instructions)
